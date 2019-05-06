@@ -64,7 +64,18 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image01" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-sd-Zli">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Xlt-sd-Zli" firstAttribute="top" secondItem="uFZ-XE-gmZ" secondAttribute="top" id="3tW-Xx-D02"/>
+                                            <constraint firstItem="Xlt-sd-Zli" firstAttribute="leading" secondItem="uFZ-XE-gmZ" secondAttribute="leading" id="BHp-gs-3iO"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xlt-sd-Zli" secondAttribute="trailing" id="H0G-H2-qdc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xlt-sd-Zli" secondAttribute="bottom" id="JnP-gF-FOO"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -81,9 +92,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="lvz-J6-Ltx" id="jzJ-hh-Msh"/>
+                        <outlet property="flipCountLabel" destination="dQk-gK-W3j" id="ORf-y4-8Gr"/>
+                        <outlet property="gamesPlayedLabel" destination="sdB-ot-3sm" id="oGg-4a-rIt"/>
+                        <outlet property="highScoreLabel" destination="6gs-On-85e" id="ZIP-00-JdO"/>
+                        <outlet property="scoreLabel" destination="pU1-Za-gEC" id="OyE-hr-cIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image01" width="600" height="600"/>
+    </resources>
 </document>
