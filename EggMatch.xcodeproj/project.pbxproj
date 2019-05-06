@@ -14,6 +14,8 @@
 		A8089E6B227F5C7900717DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8089E69227F5C7900717DF3 /* LaunchScreen.storyboard */; };
 		A8089E76227F5C7A00717DF3 /* EggMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E75227F5C7A00717DF3 /* EggMatchTests.swift */; };
 		A8089E81227F5C7A00717DF3 /* EggMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E80227F5C7A00717DF3 /* EggMatchUITests.swift */; };
+		A8089E94227FD1B800717DF3 /* EggCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E92227FD1B800717DF3 /* EggCell.swift */; };
+		A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8089E93227FD1B800717DF3 /* EggCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		A8089E7C227F5C7A00717DF3 /* EggMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8089E80227F5C7A00717DF3 /* EggMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggMatchUITests.swift; sourceTree = "<group>"; };
 		A8089E82227F5C7A00717DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8089E92227FD1B800717DF3 /* EggCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCell.swift; sourceTree = "<group>"; };
+		A8089E93227FD1B800717DF3 /* EggCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EggCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				A8089E64227F5C6B00717DF3 /* Main.storyboard */,
+				A8089E92227FD1B800717DF3 /* EggCell.swift */,
+				A8089E93227FD1B800717DF3 /* EggCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				A8089E6B227F5C7900717DF3 /* LaunchScreen.storyboard in Resources */,
 				A8089E68227F5C7900717DF3 /* Assets.xcassets in Resources */,
 				A8089E66227F5C6B00717DF3 /* Main.storyboard in Resources */,
+				A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8089E94227FD1B800717DF3 /* EggCell.swift in Sources */,
 				A8089E63227F5C6B00717DF3 /* ViewController.swift in Sources */,
 				A8089E61227F5C6B00717DF3 /* AppDelegate.swift in Sources */,
 			);
