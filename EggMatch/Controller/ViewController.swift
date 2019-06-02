@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet private var scoreLabel: UILabel!
     @IBOutlet private var collectionView: UICollectionView!
     
-    lazy private var game = Game()
+    private var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        game = Game(delegate: self)
     }
     
     private func setupCollectionView() {
@@ -33,13 +34,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return game.cards.count
+        return game?.cards.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EggCell.reuseIdentifier, for: indexPath) as? EggCell else {
             return EggCell()
         }
+        guard let game = game else { return EggCell() }
         let card = game.cards[indexPath.row]
         let image = card.isFaceUp ? card.image : #imageLiteral(resourceName: "ShakeAndSee")
         cell.configure(with: image)
@@ -49,17 +51,35 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let game = game else { return }
         let card = game.cards[indexPath.row]
         game.select(card: card)
-        flipCountLabel.text = "\(game.flipCount)"
+        flipCountLabel.text = "Flip Count: \(game.flipCount)"
+        scoreLabel.text = "Score: \(game.score)"
         collectionView.reloadData()
-        print(card.id)
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 80)
+    }
+}
+
+extension ViewController: GameDelegate {
+    func gameOver() {
+        let alertController = UIAlertController(title: "Game Over",
+                                                message: nil,
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "New Game",
+                                   style: .default) { _ in
+                                    self.game = nil
+                                    self.game = Game(delegate: self)
+                                    self.collectionView.reloadData()
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+        print("GAME OVER")
     }
 }
 

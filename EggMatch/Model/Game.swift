@@ -6,17 +6,23 @@
 //  Copyright © 2019 Matt Deuschle. All rights reserved.
 //
 
+protocol GameDelegate: AnyObject {
+    func gameOver()
+}
+
 import Foundation
 
-struct Game {
+class Game {
     private(set) var cards = [Card]()
     private(set) var flipCount = 0
     private(set) var score = 0
-    init() {
+    weak var delegate: GameDelegate?
+    init(delegate: GameDelegate) {
+        self.delegate = delegate
         cards = CardService.shared.getCards()
     }
     
-    mutating func select(card: Card) {
+    func select(card: Card) {
         if card.isFaceUp || card.isMatched {
             return
         }
@@ -33,6 +39,10 @@ struct Game {
                 score += 2
             } else {
                 score -= 1
+            }
+            let matchedCards = cards.filter { $0.isMatched }
+            if cards.count == matchedCards.count {
+                delegate?.gameOver()
             }
         case 2:
             faceUpCards.forEach { $0.isFaceUp = false }
