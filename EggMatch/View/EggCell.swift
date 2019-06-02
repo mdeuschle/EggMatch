@@ -10,11 +10,11 @@ import UIKit
 
 class EggCell: UICollectionViewCell {
     
-    @IBOutlet weak var eggImageView: UIImageView!
+    @IBOutlet weak var eggView: UIImageView!
     
     static let reuseIdentifier = "EggCell"
     
     func configure(with eggImage: UIImage) {
-        eggImageView.image = eggImage
+        eggView.image = eggImage
     }
 }

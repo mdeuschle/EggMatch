@@ -16,17 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet private var scoreLabel: UILabel!
     @IBOutlet private var collectionView: UICollectionView!
     
-    var eggImages = [UIImage]()
-
+    lazy private var game = Game()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let eggImage = UIImage(named: "image01")
-        eggImages = Array.init(repeating: eggImage!, count: 20)
         setupCollectionView()
     }
     
     private func setupCollectionView() {
         collectionView.dataSource = self
+        collectionView.delegate = self
         let nib = UINib(nibName: "EggCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: EggCell.reuseIdentifier)
     }
@@ -34,16 +33,34 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return game.cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EggCell.reuseIdentifier, for: indexPath) as? EggCell else {
             return EggCell()
         }
-        let image = eggImages[indexPath.row]
+        let card = game.cards[indexPath.row]
+        let image = card.isFaceUp ? card.image : #imageLiteral(resourceName: "ShakeAndSee")
         cell.configure(with: image)
         return cell
     }
 }
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = game.cards[indexPath.row]
+        game.select(card: card)
+        flipCountLabel.text = "\(game.flipCount)"
+        collectionView.reloadData()
+        print(card.id)
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 80)
+    }
+}
+
 

@@ -10,12 +10,15 @@
 		A8089E61227F5C6B00717DF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E60227F5C6B00717DF3 /* AppDelegate.swift */; };
 		A8089E63227F5C6B00717DF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E62227F5C6B00717DF3 /* ViewController.swift */; };
 		A8089E66227F5C6B00717DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8089E64227F5C6B00717DF3 /* Main.storyboard */; };
-		A8089E68227F5C7900717DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8089E67227F5C7900717DF3 /* Assets.xcassets */; };
 		A8089E6B227F5C7900717DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8089E69227F5C7900717DF3 /* LaunchScreen.storyboard */; };
 		A8089E76227F5C7A00717DF3 /* EggMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E75227F5C7A00717DF3 /* EggMatchTests.swift */; };
 		A8089E81227F5C7A00717DF3 /* EggMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E80227F5C7A00717DF3 /* EggMatchUITests.swift */; };
 		A8089E94227FD1B800717DF3 /* EggCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E92227FD1B800717DF3 /* EggCell.swift */; };
 		A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8089E93227FD1B800717DF3 /* EggCell.xib */; };
+		A8089E972287CB6A00717DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8089E962287CB6A00717DF3 /* Assets.xcassets */; };
+		A83E5481229AF89E00EDFC58 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5480229AF89E00EDFC58 /* Card.swift */; };
+		A83E5484229AFA4000EDFC58 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5483229AFA4000EDFC58 /* CardService.swift */; };
+		A83E5486229B0B9700EDFC58 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5485229B0B9700EDFC58 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 		A8089E60227F5C6B00717DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8089E62227F5C6B00717DF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8089E65227F5C6B00717DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A8089E67227F5C7900717DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8089E6A227F5C7900717DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8089E6C227F5C7900717DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8089E71227F5C7A00717DF3 /* EggMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,10 @@
 		A8089E82227F5C7A00717DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8089E92227FD1B800717DF3 /* EggCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCell.swift; sourceTree = "<group>"; };
 		A8089E93227FD1B800717DF3 /* EggCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EggCell.xib; sourceTree = "<group>"; };
+		A8089E962287CB6A00717DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A83E5480229AF89E00EDFC58 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A83E5483229AFA4000EDFC58 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		A83E5485229B0B9700EDFC58 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A8089E60227F5C6B00717DF3 /* AppDelegate.swift */,
-				A8089E67227F5C7900717DF3 /* Assets.xcassets */,
+				A8089E962287CB6A00717DF3 /* Assets.xcassets */,
 				A8089E69227F5C7900717DF3 /* LaunchScreen.storyboard */,
 			);
 			path = "Support Files";
@@ -159,8 +165,19 @@
 		A8089E91227F607D00717DF3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A83E5482229AFA2B00EDFC58 /* Services */,
+				A83E5480229AF89E00EDFC58 /* Card.swift */,
+				A83E5485229B0B9700EDFC58 /* Game.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A83E5482229AFA2B00EDFC58 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A83E5483229AFA4000EDFC58 /* CardService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8089E6B227F5C7900717DF3 /* LaunchScreen.storyboard in Resources */,
-				A8089E68227F5C7900717DF3 /* Assets.xcassets in Resources */,
 				A8089E66227F5C6B00717DF3 /* Main.storyboard in Resources */,
+				A8089E972287CB6A00717DF3 /* Assets.xcassets in Resources */,
 				A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,8 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8089E94227FD1B800717DF3 /* EggCell.swift in Sources */,
+				A83E5486229B0B9700EDFC58 /* Game.swift in Sources */,
+				A83E5484229AFA4000EDFC58 /* CardService.swift in Sources */,
 				A8089E63227F5C6B00717DF3 /* ViewController.swift in Sources */,
 				A8089E61227F5C6B00717DF3 /* AppDelegate.swift in Sources */,
+				A83E5481229AF89E00EDFC58 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
