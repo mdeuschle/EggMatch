@@ -8,6 +8,7 @@
 
 protocol GameDelegate: AnyObject {
     func gameOver()
+    func cardsMatched()
 }
 
 import Foundation
@@ -33,10 +34,15 @@ class Game {
             card.isFaceUp = true
         case 1:
             card.isFaceUp = true
+            // a match is made
             if faceUpCard?.id == card.id {
-                faceUpCard?.isMatched = true
-                card.isMatched = true
-                score += 2
+                Timer.scheduledTimer(withTimeInterval: 0.7,
+                                     repeats: false) { _ in
+                                        self.delegate?.cardsMatched()
+                                        faceUpCard?.isMatched = true
+                                        card.isMatched = true
+                                        self.score += 2
+                }
             } else {
                 score -= 1
             }

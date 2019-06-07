@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     
     private var game: Game?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        let nib = UINib(nibName: "EggCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: EggCell.reuseIdentifier)
+//        let nib = UINib(nibName: "EggCell", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: EggCell.reuseIdentifier)
     }
 }
 
@@ -43,20 +43,33 @@ extension ViewController: UICollectionViewDataSource {
         }
         guard let game = game else { return EggCell() }
         let card = game.cards[indexPath.row]
-        let image = card.isFaceUp ? card.image : #imageLiteral(resourceName: "ShakeAndSee")
-        cell.configure(with: image)
+//        let image = card.isFaceUp ? card.image : #imageLiteral(resourceName: "blank")
+        cell.isHidden = card.isMatched
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? EggCell else {
+            return
+        }
+
         guard let game = game else { return }
-        let card = game.cards[indexPath.row]
-        game.select(card: card)
-        flipCountLabel.text = "Flip Count: \(game.flipCount)"
-        scoreLabel.text = "Score: \(game.score)"
-        collectionView.reloadData()
+        
+        cell.flipCard()
+        
+        
+//        let card = game.cards[indexPath.row]
+        
+        
+//        game.select(card: card)
+//        flipCountLabel.text = "Flip Count: \(game.flipCount)"
+//        scoreLabel.text = "Score: \(game.score)"
+//        collectionView.reloadData()
+        
+
     }
 }
 
@@ -80,6 +93,10 @@ extension ViewController: GameDelegate {
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
         print("GAME OVER")
+    }
+    
+    func cardsMatched() {
+        collectionView.reloadData()
     }
 }
 

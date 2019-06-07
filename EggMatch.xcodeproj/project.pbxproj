@@ -14,7 +14,6 @@
 		A8089E76227F5C7A00717DF3 /* EggMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E75227F5C7A00717DF3 /* EggMatchTests.swift */; };
 		A8089E81227F5C7A00717DF3 /* EggMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E80227F5C7A00717DF3 /* EggMatchUITests.swift */; };
 		A8089E94227FD1B800717DF3 /* EggCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8089E92227FD1B800717DF3 /* EggCell.swift */; };
-		A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8089E93227FD1B800717DF3 /* EggCell.xib */; };
 		A8089E972287CB6A00717DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8089E962287CB6A00717DF3 /* Assets.xcassets */; };
 		A83E5481229AF89E00EDFC58 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5480229AF89E00EDFC58 /* Card.swift */; };
 		A83E5484229AFA4000EDFC58 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5483229AFA4000EDFC58 /* CardService.swift */; };
@@ -52,7 +51,6 @@
 		A8089E80227F5C7A00717DF3 /* EggMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggMatchUITests.swift; sourceTree = "<group>"; };
 		A8089E82227F5C7A00717DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8089E92227FD1B800717DF3 /* EggCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCell.swift; sourceTree = "<group>"; };
-		A8089E93227FD1B800717DF3 /* EggCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EggCell.xib; sourceTree = "<group>"; };
 		A8089E962287CB6A00717DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83E5480229AF89E00EDFC58 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A83E5483229AFA4000EDFC58 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				A8089E64227F5C6B00717DF3 /* Main.storyboard */,
 				A8089E92227FD1B800717DF3 /* EggCell.swift */,
-				A8089E93227FD1B800717DF3 /* EggCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 				A8089E6B227F5C7900717DF3 /* LaunchScreen.storyboard in Resources */,
 				A8089E66227F5C6B00717DF3 /* Main.storyboard in Resources */,
 				A8089E972287CB6A00717DF3 /* Assets.xcassets in Resources */,
-				A8089E95227FD1B800717DF3 /* EggCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
